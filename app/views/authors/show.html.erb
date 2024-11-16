@@ -1,0 +1,12 @@
+<p><%= @authors.name %></p>
+<% @authors.books.each do |book| %>
+    <p><%= book.title %></p>
+    <p><%= book.content %></p>
+<% end %>
+
+
+
+
+
+
+<%= link_to "Back", authors_path %>

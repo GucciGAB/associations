@@ -1,0 +1,23 @@
+<div class="container py-4">
+  <h1 class="mb-4 display-4">Users</h1>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Email</th>
+        <th>Profile</th>
+        <th>Gender</th>
+        <th>Bio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.profile ? user.profile.name : "No profile" %></td>
+          <td><%= user.profile ? user.profile.gender : "No profile" %></td>
+          <td><%= user.profile ? user.profile.bio : "No profile" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

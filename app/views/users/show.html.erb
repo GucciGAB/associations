@@ -1,0 +1,5 @@
+<div class="container p-6 mx-auto">
+  <h1 class="mb-4 text-3xl font-bold text-gray-800">User: <%= @user.name %></h1>
+  <h2 class="mb-2 text-xl">Profile</h2>
+  <p><%= @user.profile.bio if @user.profile %></p>
+</div>

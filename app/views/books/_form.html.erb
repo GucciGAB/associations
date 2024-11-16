@@ -1,0 +1,20 @@
+<%= form_with model: @book do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_field :content, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :author_id, "Author", class: 'form-label' %>
+    <%= form.collection_select :author_id, Author.all, :id, :name, prompt: "Select an Author", class: 'form-select' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
+  </div>
+<% end %>
