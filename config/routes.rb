@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :books do
     resources :authors, only: [:index,]
   end
-  resources :users, only: [ :index, :show ]
-  resources :profiles, only: [ :index, :show ]
+  resources :users
+  resources :profiles
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

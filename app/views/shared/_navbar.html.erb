@@ -1,0 +1,15 @@
+<nav class="bg-gray-800 text-white">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <%= link_to "MyApp", root_path, class: "text-lg font-bold" %>
+    <div class="hidden md:flex space-x-4">
+      <%= link_to "Users", users_path, class: "hover:text-gray-300" %>
+      <%= link_to "Books", books_path, class: "hover:text-gray-300" %>
+      <%= link_to "Authors", authors_path, class: "hover:text-gray-300" %>
+    </div>
+    <button class="block md:hidden focus:outline-none" id="menu-toggle">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+</nav>

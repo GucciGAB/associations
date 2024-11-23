@@ -1,0 +1,35 @@
+<%= form_with model: @user, class: "space-y-4" do |form| %>
+  <!-- Email Field -->
+  <div class="mb-4">
+    <%= form.label :email, class: 'block text-sm font-medium text-gray-700' %>
+    <%= form.text_field :email, class: 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+  </div>
+
+  <!-- Profile Fields -->
+  <%= form.fields_for :profile do |profile_form| %>
+    <div class="space-y-4">
+      <!-- Name Field -->
+      <div class="mb-4">
+        <%= profile_form.label :name, class: 'block text-sm font-medium text-gray-700' %>
+        <%= profile_form.text_field :name, class: 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+      </div>
+
+      <!-- Bio Field -->
+      <div class="mb-4">
+        <%= profile_form.label :bio, class: 'block text-sm font-medium text-gray-700' %>
+        <%= profile_form.text_field :bio, class: 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+      </div>
+
+      <!-- Gender Field -->
+      <div class="mb-4">
+        <%= profile_form.label :gender, class: 'block text-sm font-medium text-gray-700' %>
+        <%= profile_form.text_field :gender, class: 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- Submit Button -->
+  <div>
+    <%= form.submit 'Submit', class: 'w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2' %>
+  </div>
+<% end %>

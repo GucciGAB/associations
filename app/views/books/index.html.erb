@@ -1,28 +1,28 @@
-<h1>Books</h1>
-<div class="mb-3">
-  <%= link_to 'New Book', new_book_path, class: 'btn btn-primary' %>
-  <%= link_to 'Authors', authors_path, class: 'btn btn-secondary' %>
+<h1 class="text-2xl font-bold mb-4">Books</h1>
+<div class="mb-4 flex space-x-3">
+  <%= link_to 'New Book', new_book_path, class: 'px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600' %>
+  <%= link_to 'Authors', authors_path, class: 'px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600' %>
 </div>
 
-<table class="table table-bordered table-hover">
-  <thead class="table-dark">
+<table class="w-full border-collapse border border-gray-300 text-left">
+  <thead class="bg-gray-800 text-white">
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th>Actions</th>
+      <th class="px-4 py-2 border border-gray-300">Title</th>
+      <th class="px-4 py-2 border border-gray-300">Description</th>
+      <th class="px-4 py-2 border border-gray-300">Author</th>
+      <th class="px-4 py-2 border border-gray-300">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.content %></td>
-        <td><%= book.author.name if book.author %></td>
-        <td>
-          <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-sm btn-warning me-2' %>
-          <%= link_to 'Show', book_path(book), class: 'btn btn-sm btn-info me-2' %>
-          <%= link_to 'Destroy', book_path(book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-sm btn-danger' %>
+      <tr class="odd:bg-white even:bg-gray-100">
+        <td class="px-4 py-2 border border-gray-300"><%= book.title %></td>
+        <td class="px-4 py-2 border border-gray-300"><%= book.content %></td>
+        <td class="px-4 py-2 border border-gray-300"><%= book.author.name if book.author %></td>
+        <td class="px-4 py-2 border border-gray-300 space-x-2">
+          <%= link_to 'Edit', edit_book_path(book), class: 'px-3 py-1 bg-yellow-400 text-black rounded hover:bg-yellow-500' %>
+          <%= link_to 'Show', book_path(book), class: 'px-3 py-1 bg-blue-400 text-white rounded hover:bg-blue-500' %>
+          <%= link_to 'Destroy', book_path(book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600' %>
         </td>
       </tr>
     <% end %>

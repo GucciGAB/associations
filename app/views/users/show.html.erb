@@ -1,5 +1,17 @@
 <div class="container p-6 mx-auto">
-  <h1 class="mb-4 text-3xl font-bold text-gray-800">User: <%= @user.name %></h1>
-  <h2 class="mb-2 text-xl">Profile</h2>
-  <p><%= @user.profile.bio if @user.profile %></p>
+  <h1 class="mb-6 text-3xl font-bold text-gray-800">
+    User <%= @user.profile.name %>
+  </h1>
+
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h2 class="mb-4 text-xl font-semibold text-gray-700">Profile</h2>
+    <% if @user.profile %>
+      <p class="text-gray-600"><%= @user.profile.bio %></p>
+    <% else %>
+      <p class="text-gray-500 italic">No profile information available.</p>
+    <% end %>
+  </div>
+
+<%= link_to "Back", users_path %>
+
 </div>
